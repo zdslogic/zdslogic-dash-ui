@@ -1,0 +1,14 @@
+/profile-award.service.ts
+/profile-credibility.service.ts
+/profile-education.datasource.ts
+/profile-education.service.ts
+/profile-entity.datasource.ts
+/profile-entity.service.ts
+/profile-experience.datasource.ts
+/profile-experience.service.ts
+/profile-misc.service.ts
+/profile-skill.service.ts
+/profile-summary.datasource.ts
+/profile-summary.service.ts
+/profiles.service.ts
+/resumes.service.ts

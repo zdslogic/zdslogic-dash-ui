@@ -1,0 +1,20 @@
+<div class="flex w-full bg-white py-16">
+    <div class="container">
+        <mat-tab-group>
+            <mat-tab label="Http Access Logs">
+                <app-http-access-log-list></app-http-access-log-list>
+            </mat-tab>
+            <mat-tab label="Http Error Logs">
+                <app-http-error-log-list></app-http-error-log-list>
+            </mat-tab>
+            <!--  
+            <mat-tab label="Page View Summary">
+                <app-http-access-log-pageview-list></app-http-access-log-pageview-list>
+            </mat-tab>
+            -->
+            <mat-tab label="UI App Logs">
+                <app-app-log-list></app-app-log-list>
+            </mat-tab>
+        </mat-tab-group>
+    </div>
+</div>

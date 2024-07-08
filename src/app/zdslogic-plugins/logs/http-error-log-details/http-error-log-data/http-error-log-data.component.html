@@ -1,0 +1,93 @@
+<div id="#logList" #logList class="mx-auto flex flex-col min-w-full">
+  <div class="flex flex-col p-6 sm:p-10">
+    <mat-card-title class="text-left">Http Error Log Details</mat-card-title>
+    <mat-card-content>
+      <div fxLayout="column" fxLayoutAlign="start left" fxLayoutGap="10px">
+        <div fxLayout="row wrap" fxFlex>
+          <div fxFlex><strong>RecieveDateTime:</strong></div>
+          <div fxFlex>{{log?.recieveTime}}</div>
+        </div>
+        <div fxLayout="row wrap" fxFlex>
+          <div fxFlex><strong>LogLevel:</strong></div>
+          <div fxFlex>{{log?.logLevel}}</div>
+        </div>
+        <div fxLayout="row wrap" fxFlex>
+          <div fxFlex><strong>ErrorCode:</strong></div>
+          <div fxFlex>{{log?.errorCode}}</div>
+        </div>
+        <div fxLayout="row wrap" fxFlex>
+          <div fxFlex><strong>ErrorMessage:</strong></div>
+          <div fxFlex>{{log?.errorMessage}}</div>
+        </div>
+        <div fxLayout="row wrap" fxFlex>
+          <div fxFlex><strong>Client:</strong></div>
+          <div fxFlex>{{log?.client}}</div>
+        </div>
+        <div fxLayout="row wrap" fxFlex>
+          <div fxFlex><strong>Server:</strong></div>
+          <div fxFlex>{{log?.server}}</div>
+        </div>
+        <div fxLayout="row wrap" fxFlex>
+          <div fxFlex><strong>Request:</strong></div>
+          <div fxFlex>{{log?.request}}</div>
+        </div>
+        <div fxLayout="row wrap" fxFlex>
+          <div fxFlex><strong>Host:</strong></div>
+          <div fxFlex>{{log?.host}}</div>
+        </div>
+        <!--
+        <mat-tab-group>
+          <mat-tab label="WHOIS">
+            <div fxLayout="row wrap" fxFlex>
+              <div fxFlex>
+                <textarea style="width: 900px;" cdkTextareaAutosize cdkAutosizeMinRows="25" cdkAutosizeMaxRows="100">{{log?.whois}}
+          </textarea>
+              </div>
+            </div>
+          </mat-tab>
+
+          <mat-tab label="Key/Value">
+            <div fxLayout="row wrap" fxFlex>
+              <div fxFlex>
+                <textarea style="width: 900px;" cdkTextareaAutosize cdkAutosizeMinRows="25" cdkAutosizeMaxRows="100">{{log?.parsedKeyValues}}
+          </textarea>
+              </div>
+            </div>
+
+          </mat-tab>
+
+          <mat-tab label="JSON">
+            <div fxLayout="row wrap" fxFlex>
+              <div fxFlex>
+                <textarea style="width: 900px;" cdkTextareaAutosize cdkAutosizeMinRows="25" cdkAutosizeMaxRows="100">{{log?.parsedJSON}}
+          </textarea>
+              </div>
+            </div>
+          </mat-tab>
+
+          <mat-tab label="XML">
+            <div fxLayout="row wrap" fxFlex>
+              <div fxFlex>
+                <textarea style="width: 900px;" cdkTextareaAutosize cdkAutosizeMinRows="25" cdkAutosizeMaxRows="100">{{log?.parsedXML}}
+          </textarea>
+              </div>
+            </div>
+          </mat-tab>
+          
+          <mat-tab label="Map">
+            <div style="margin-top: 12px;">
+              <p>{{listingPlace}}</p>
+
+              <div #mapContainer id="map"></div>
+            </div>
+          </mat-tab>
+        </mat-tab-group>
+-->
+
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button class="w-52 mt-4" mat-raised-button color="primary" (click)="onCancel()">OK</button>
+    </mat-card-actions>
+  </div>
+</div>

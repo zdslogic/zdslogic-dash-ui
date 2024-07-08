@@ -1,0 +1,9 @@
+/article-list-config.model.ts
+/article-orig.model.ts
+/article.model.ts
+/comment.model.ts
+/errors.model.ts
+/index.ts
+/profile-orig.model.ts
+/profile.model.ts
+/user.model.ts

@@ -1,0 +1,65 @@
+<div id="#logList" #logList class="mx-auto flex flex-col min-w-full">
+  <div class="flex flex-col p-6 sm:p-10">
+    <h2 class="text-2xl font-bold mb-4 w-full max-w-xs sm:max-w-5xl mx-auto">Http Error logs</h2>
+    <div class="flex flex-col flex-auto w-full max-w-xs sm:max-w-5xl mx-auto">
+      <div class="flex flex-auto search-component">
+        <div class="flex flex-auto">
+          <mat-form-field class="fuse-mat-no-subscript w-full sm:w-96 sm:mt-0" [floatLabel]="'always'">
+            <mat-icon matPrefix class="icon-size-5" [svgIcon]="'heroicons_solid:search'"
+              (click)="searchFormSubmitted('ALL')"></mat-icon>
+            <input placeholder="Search by title or description" matInput #query id="searchQuery"
+              (keyup)="searchValueChanged()" (keyup.enter)="searchFormSubmitted('ALL')" [(ngModel)]="searchString"
+              name="searchString">
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+    <div id="chartContainer" class="flex flex-col flex-auto w-full max-w-xs sm:max-w-5xl mx-auto">
+      <table class="table table-striped align-middle" mat-table [dataSource]="dataSource" matSort>
+        <ng-container matColumnDef="recieveTime">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Date </th>
+          <td mat-cell *matCellDef="let element"> {{element.recieveTime}} </td>
+        </ng-container>
+        <!--
+                    <ng-container matColumnDef="logLevel">
+                      <th mat-header-cell *matHeaderCellDef mat-sort-header> LogLevel </th>
+                      <td mat-cell *matCellDef="let element"> {{element.logLevel}} </td>
+                    </ng-container>
+          
+                     <ng-container matColumnDef="errorCode">
+                      <th mat-header-cell *matHeaderCellDef mat-sort-header> ErrorCode </th>
+                      <td mat-cell *matCellDef="let element"> {{element.errorCode}} </td>
+                    </ng-container>
+          -->
+        <ng-container matColumnDef="errorMessage">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> ErrorMessage </th>
+          <td mat-cell *matCellDef="let element"> {{element.errorMessage}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="client">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Client </th>
+          <td mat-cell *matCellDef="let element"> {{element.client}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="server">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Server </th>
+          <td mat-cell *matCellDef="let element"> {{element.server}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="details">
+          <th mat-header-cell *matHeaderCellDef> Details </th>
+          <td mat-cell *matCellDef="let element">
+            <button mat-icon-button color="primary" (click)="redirectToDetails(element.id)">
+              <mat-icon class="mat-18">reorder</mat-icon>
+            </button>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="redirectToDetails(row.id)"></tr>
+
+      </table>
+      <mat-paginator [length]="dataSource.total" [pageSize]="6" [pageSizeOptions]="[2, 4, 6, 10, 20]"> </mat-paginator>
+    </div>
+  </div>
+</div>

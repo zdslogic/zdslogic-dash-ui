@@ -1,0 +1,12 @@
+/_redirects
+/custom.scss
+/favicon-16x16.png
+/favicon-32x32.png
+/favicon.ico
+/global.d.ts
+/index-save.html
+/index.html
+/main.ts
+/polyfills.ts
+/styles.scss
+/test.ts

@@ -1,0 +1,172 @@
+<div id="#logList" #logList class="mx-auto flex flex-col min-w-full">
+	<div class="flex flex-col p-6 sm:p-10">
+		<mat-card-title class="text-left">Http Access Log Details</mat-card-title>
+		<mat-card-content>
+			<div fxLayout="column" fxLayoutAlign="start left" fxLayoutGap="10px">
+				<div fxLayout="row wrap" fxFlex>
+					<div fxFlex>
+						<strong>RecieveDateTime:</strong>
+					</div>
+					<div fxFlex>{{log?.recieveTime}}</div>
+				</div>
+				<div fxLayout="row wrap" fxFlex>
+					<div fxFlex>
+						<strong>RecieveTime:</strong>
+					</div>
+					<div fxFlex>{{log?.recieveTimeStamp | date:'yyyy-MM-dd HH:mm:ss'}}</div>
+				</div>
+				<div fxLayout="row wrap" fxFlex>
+					<div fxFlex>
+						<strong>IP:</strong>
+					</div>
+					<div fxFlex>{{log?.ip}}</div>
+				</div>
+				<div fxLayout="row wrap" fxFlex>
+					<div fxFlex>
+						<strong>Path:</strong>
+					</div>
+					<div fxFlex>{{log?.path}}</div>
+				</div>
+				<div fxLayout="row wrap" fxFlex>
+					<div fxFlex>
+						<strong>Method:</strong>
+					</div>
+					<div fxFlex>{{log?.method}}</div>
+				</div>
+				<div fxLayout="row wrap" fxFlex>
+					<div fxFlex>
+						<strong>Request:</strong>
+					</div>
+					<div fxFlex>{{log?.request}}</div>
+				</div>
+				<div fxLayout="row wrap" fxFlex>
+					<div fxFlex>
+						<strong>FirstLine:</strong>
+					</div>
+					<div fxFlex>{{log?.firstLine}}</div>
+				</div>
+				<div fxLayout="row wrap" fxFlex>
+					<div fxFlex>
+						<strong>UserAgent:</strong>
+					</div>
+					<div fxFlex>{{log?.userAgent}}</div>
+				</div>
+				<div fxLayout="row wrap" fxFlex>
+					<div fxFlex>
+						<strong>Protocol:</strong>
+					</div>
+					<div fxFlex>{{log?.protocol}}</div>
+				</div>
+				<div fxLayout="row wrap" fxFlex>
+					<div fxFlex>
+						<strong>Host:</strong>
+					</div>
+					<div fxFlex>{{log?.host}}</div>
+				</div>
+
+				<div fxLayout="row wrap" fxFlex>
+					<div fxFlex>
+						<strong>Status:</strong>
+					</div>
+					<div fxFlex>{{log?.status}}</div>
+				</div>
+
+				<div fxLayout="row wrap" fxFlex>
+					<div fxFlex>
+						<hr style="border: 1px solid #3f51b5;" />
+					</div>
+				</div>
+
+				<div fxLayout="row wrap" fxFlex>
+
+					<div fxFlex>
+						<strong>Link:</strong>
+					</div>
+					<div fxFlex>
+						<a href="{{firstLineLink}}" target="_blank"> {{firstLineLink}}</a>
+					</div>
+				</div>
+
+				<div class="flex flex-auto gap-10 mt-6">
+					<button *ngIf="isUserAuthorized" class="action-btn w-52" mat-raised-button color="warning"
+						(click)="redirectToAccessAbuse()">
+						<i class="ion-gear-a"></i> Access Abuse
+					</button>
+
+					<button class="w-52" mat-raised-button color="primary" (click)="onCancel()">OK</button>
+				</div>
+				<div fxLayout="row wrap" fxFlex>
+					<div fxFlex>
+						<hr style="border: 1px solid #3f51b5;" />
+					</div>
+				</div>
+
+				<mat-tab-group>
+
+					<mat-tab label="WHOIS">
+						<div fxLayout="row wrap" fxFlex>
+							<div fxFlex>
+								<textarea style="width: 900px;" cdkTextareaAutosize cdkAutosizeMinRows="25" cdkAutosizeMaxRows="100">{{log?.whois}}
+          </textarea>
+							</div>
+						</div>
+					</mat-tab> <mat-tab label="Key/Value">
+						<div fxLayout="row wrap" fxFlex>
+							<!--             <div fxFlex><strong>Key/Value:</strong></div> -->
+							<div fxFlex>
+								<textarea style="width: 900px;" cdkTextareaAutosize cdkAutosizeMinRows="25" cdkAutosizeMaxRows="100">{{log?.parsedKeyValues}}
+          </textarea>
+							</div>
+						</div>
+
+					</mat-tab> <mat-tab label="JSON">
+						<div fxLayout="row wrap" fxFlex>
+							<!--              <div fxFlex><strong>JSON:</strong></div> -->
+							<div fxFlex>
+								<textarea style="width: 900px;" cdkTextareaAutosize cdkAutosizeMinRows="25" cdkAutosizeMaxRows="100">{{log?.parsedJSON}}
+          </textarea>
+							</div>
+						</div>
+					</mat-tab> <mat-tab label="XML">
+						<div fxLayout="row wrap" fxFlex>
+							<!--              <div fxFlex><strong>JSON:</strong></div> -->
+							<div fxFlex>
+								<textarea style="width: 900px;" cdkTextareaAutosize cdkAutosizeMinRows="25" cdkAutosizeMaxRows="100">{{log?.parsedXML}}
+          </textarea>
+							</div>
+						</div>
+					</mat-tab>
+
+					<mat-tab label="Map">
+						<!--
+          <google-map height="500px" width="100%" [zoom]="zoom" [center]="center" [options]="options"
+            (mapClick)="click($event)">
+            <map-marker #markerElem *ngFor="let marker of markers" [position]="marker.position" [label]="marker.label"
+              [title]="marker.title" [options]="marker.options" (mapClick)="openInfo(markerElem, marker.info)">
+            </map-marker>
+
+            <map-info-window>{{ infoContent }}</map-info-window>
+
+          </google-map>
+  
+          <button (click)="zoomIn()">Zoom in</button>
+          <button (click)="zoomOut()">Zoom out</button>
+          <button (click)="logCenter()">Log center</button>
+          <button (click)="addMarker()">Add marker</button>
+-->
+						<div style="margin-top: 12px;">
+							<p>{{listingPlace}}</p>
+
+							<div #mapContainer id="map"></div>
+
+						</div>
+
+					</mat-tab>
+
+				</mat-tab-group>
+			</div>
+		</mat-card-content> <mat-card-actions>
+			<button class="w-52" mat-raised-button color="primary" (click)="onCancel()">OK</button>
+		</mat-card-actions>
+	</div>
+</div>

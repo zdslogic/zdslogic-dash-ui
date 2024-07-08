@@ -1,0 +1,9 @@
+/email-blacklist-file-attachment.model.ts
+/email-blacklist-file.model.ts
+/email-inbox-file-attachment.model.ts
+/email-inbox-file.model.ts
+/email-junk-file-attachment.model.ts
+/email-junk-file.model.ts
+/email-sent-file-attachment.model.ts
+/email-sent-file.model.ts
+/emailContactSend.model.ts

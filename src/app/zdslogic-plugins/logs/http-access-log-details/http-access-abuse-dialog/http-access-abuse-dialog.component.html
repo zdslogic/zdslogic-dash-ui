@@ -1,0 +1,118 @@
+<section fxLayout="row wrap" fxLayoutAlign="center center">
+  <mat-card fxFlex="100%" fxFlex.xs="100%">
+    <mat-card-title>Access Abuse</mat-card-title>
+    <form [formGroup]="accessAbuseForm" autocomplete="off" novalidate (ngSubmit)="updateAccessAbuse(accessAbuseForm .value)" fxLayout="column wrap"
+      fxLayoutAlign="center center" fxLayoutGap="10px">
+      <mat-card-content>
+<div fxLayout="column wrap" fxLayoutAlign="center start">
+         
+<br />
+<!--  
+        <mat-form-field>
+          <input matInput type="text" placeholder="Abuse Confidence Score" formControlName="abuseConfidenceScore" id="abuseConfidenceScore">
+        </mat-form-field>	
+-->        
+			<div fxLayout="row" fxFlex>
+				<div>
+					<strong>IP: </strong> &nbsp;
+				</div>
+				<div>{{accessAbuse?.ipAddress}}</div>
+			</div>   
+			
+			<div fxLayout="row" fxFlex>
+				<div>
+					<strong>isPublic: </strong> &nbsp;
+				</div>
+				<div>{{accessAbuse?.isPublic}}</div>
+			</div>    
+			
+			<div fxLayout="row" fxFlex>
+				<div>
+					<strong>IP Version: </strong> &nbsp;
+				</div>
+				<div>{{accessAbuse?.ipVersion}}</div>
+			</div>    
+			
+			<div fxLayout="row" fxFlex>
+				<div>
+					<strong>isWhitelisted: </strong> &nbsp;
+				</div>
+				<div>{{accessAbuse?.isWhitelisted}}</div>
+			</div>    
+			
+			<div fxLayout="row" fxFlex>
+				<div>
+					<strong>Abuse Confidence Score: </strong> &nbsp;
+				</div>
+				<div>{{accessAbuse?.abuseConfidenceScore}}</div>
+			</div>   
+			 			
+			<div fxLayout="row" fxFlex>
+				<div>
+					<strong>Country Code: </strong> &nbsp;
+				</div>
+				<div>{{accessAbuse?.countryCode}}</div>
+			</div>    
+			
+			<div fxLayout="row" fxFlex>
+				<div>
+					<strong>usageType: </strong> &nbsp;
+				</div>
+				<div>{{accessAbuse?.usageType}}</div>
+			</div>    
+			
+			<div fxLayout="row" fxFlex>
+				<div>
+					<strong>isp: </strong> &nbsp;
+				</div>
+				<div>{{accessAbuse?.isp}}</div>
+			</div>    
+			
+			<div fxLayout="row" fxFlex>
+				<div>
+					<strong>Domain: </strong> &nbsp;
+				</div>
+				<div>{{accessAbuse?.domain}}</div>
+			</div>   
+			 			
+			<div fxLayout="row" fxFlex>
+				<div>
+					<strong>Hostnames: </strong> &nbsp;
+				</div>
+				<div>{{accessAbuse?.hostnames}}</div>
+			</div>    
+			
+			<div fxLayout="row" fxFlex>
+				<div>
+					<strong>Total Reports: </strong> &nbsp;
+				</div>
+				<div>{{accessAbuse?.totalReports}}</div>
+			</div>
+			
+			<div fxLayout="row" fxFlex>
+				<div>
+					<strong>Number of Distinct Users: </strong> &nbsp;
+				</div>
+				<div>{{accessAbuse?.numDistinctUsers}}</div>
+			</div> 
+			
+			<div fxLayout="row" fxFlex>
+				<div>
+					<strong>Last Reported At: </strong> &nbsp;
+				</div>
+				<div>{{accessAbuse?.lastReportedAt}}</div>
+			</div>          
+</div>	
+      </mat-card-content>
+      
+      <mat-card-actions align="start">
+<!--  
+        <button mat-raised-button color="primary" [disabled]="!accessAbuseForm.valid">Block</button>
+-->
+		<button type="button" mat-raised-button color="warn" (click)="onBlock()">Block</button>        
+		<button type="button" mat-raised-button color="warn" (click)="onRestart()">Restart</button>
+        <button type="button" mat-raised-button color="warn" (click)="onCancel()">Cancel</button>
+      </mat-card-actions>
+    </form>
+  </mat-card>
+</section>

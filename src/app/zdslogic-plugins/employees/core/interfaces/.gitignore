@@ -1,0 +1,13 @@
+/address.model.ts
+/email-send.model.ts
+/email.model.ts
+/employee.model.ts
+/employeeForCreation.model.ts
+/group-member.model.ts
+/group.model.ts
+/note.model.ts
+/organization-member.model.ts
+/organization.model.ts
+/pagination.ts
+/phone.model.ts
+/website.model.ts

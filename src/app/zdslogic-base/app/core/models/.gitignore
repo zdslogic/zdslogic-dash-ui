@@ -1,0 +1,11 @@
+/chat-channel.model.ts
+/chat-history.model.ts
+/chat-message.model.ts
+/chat-participant-state.ts
+/chat-participant-status.enum.ts
+/chat-participant-type.enum.ts
+/chat-participant.model.ts
+/chat-user.ts
+/message-type.enum.ts
+/messages-attachment.model.ts
+/notifications.model.ts

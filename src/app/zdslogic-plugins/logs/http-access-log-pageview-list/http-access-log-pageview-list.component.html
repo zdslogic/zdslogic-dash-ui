@@ -1,0 +1,63 @@
+<mat-card class="container">
+
+  <mat-card-title class="title">
+    <div>Http Access Log Page View Summary</div>
+    <div>
+      <button mat-icon-button color="primary" matTooltip="Refresh" (click)="refresh()">
+        <mat-icon class="mat-18">refresh</mat-icon>
+      </button>
+    </div>
+  </mat-card-title>
+
+  <!-- <div fxLayout fxLayoutAlign="center center"> -->
+
+  <mat-card-content id="#logList" #logList>
+
+    <div *ngIf="isShown" class="search">
+      <mat-form-field fxFlex="20%">
+
+        <input matInput placeholder="Search logs" #input>
+
+      </mat-form-field>
+    </div>
+
+
+
+    <div id="logListContainer">
+
+      <div id="chartContainer">
+
+        <table class="table table-striped" mat-table [dataSource]="dataSource" matSort>
+          <ng-container matColumnDef="method">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Method </th>
+            <td mat-cell *matCellDef="let element"> {{element.method}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="page">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Page </th>
+            <td mat-cell *matCellDef="let element"> {{element.page}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="count">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Count </th>
+            <td mat-cell *matCellDef="let element"> {{element.count}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="status">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Status </th>
+            <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+        </table>
+
+      </div>
+      <mat-paginator [length]="dataSource.total" [pageSize]="6" [pageSizeOptions]="[2, 4, 6, 10, 20]">
+      </mat-paginator>
+
+    </div>
+
+  </mat-card-content>
+</mat-card>

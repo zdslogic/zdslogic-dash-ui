@@ -1,0 +1,34 @@
+<mat-card class="container">
+	<mat-card-title class="title">
+		<mat-icon (click)="navigateLeft()" class="left">keyboard_arrow_left</mat-icon>
+		<div>Http Access Log Chart</div>
+		<mat-icon (click)="navigateRight()" class="right">keyboard_arrow_right</mat-icon>
+	</mat-card-title>
+
+	<mat-card-content id="timeseries" #timeseries>
+  
+		<div>
+		
+<!--  		
+			<br>Current Time: {{ observableTime | date : 'long' }}
+			<br>Start Date: {{ startDateSubject | date : 'long' }}
+			<br>End Date: {{ endDateSubject | date : 'long' }}
+			
+-->			
+		</div>
+
+		<div id="chartAndDataContainer">
+			<div id="chartContainer">
+				<app-base-chart>
+
+				</app-base-chart>
+			</div>
+		</div>
+
+		<mat-slide-toggle class="show-data" color="primary" [checked]="chartControlsService.keepDrawing"
+			(change)="toggleData($event)">
+			Start/Stop
+		</mat-slide-toggle>
+
+	</mat-card-content>
+</mat-card>

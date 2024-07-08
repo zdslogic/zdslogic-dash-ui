@@ -1,0 +1,12 @@
+/email-blacklist-files.datasource.ts
+/email-blacklist-files.service.ts
+/email-files.service.ts
+/email-inbox-files.datasource.ts
+/email-inbox-files.service.ts
+/email-inbox-user-files.datasource.ts
+/email-inbox-user-files.service.ts
+/email-junk-user-files.datasource.ts
+/email-junk-user-files.service.ts
+/email-sent-user-files.datasource.ts
+/email-sent-user-files.service.ts
+/file-upload.service.ts
